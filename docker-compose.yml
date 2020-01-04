@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  node:
+    build: ./
+    env_file:
+      - ./.env
+    restart: on-failure
+    ports:
+      - "${WEB_PORT}:${WEB_PORT}"
+    volumes:
+      - "./app:/usr/src/app"
+    depends_on:
+      - "${MYSQL_HOST}"
+  db:
+    build: ./db
+    command: --sql_mode="" --default-authentication-plugin=mysql_native_password
+    restart: on-failure
+    ports:
+      - "3307:3306"
+    env_file:
+      - ./.env
+    volumes:
+      - "./data/db-data:/var/lib/mysql"
+    depends_on:
+      - admin
+  admin:
+    image: adminer
+    restart: on-failure
+    ports:
+      - "8081:8080"

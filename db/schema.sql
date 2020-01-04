@@ -1,0 +1,8 @@
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+CREATE table users(
+    email VARCHAR(255) PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT NOW()
+);

@@ -1,0 +1,16 @@
+{
+  "name": "joinus_app",
+  "version": "1.0.0",
+  "description": "Colt's MYSQL app on Docker",
+  "author": "Yevhen Khabarov <yevgeniy.habarov@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "faker": "^4.1.0",
+    "mysql": "^2.17.1"
+  },
+  "license": "MIT"
+}
