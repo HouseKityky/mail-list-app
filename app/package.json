@@ -1,7 +1,7 @@
 {
   "name": "joinus_app",
   "version": "1.0.0",
-  "description": "Colt's MYSQL app on Docker",
+  "description": "demo mail-list collector app",
   "author": "Yevhen Khabarov <yevgeniy.habarov@gmail.com>",
   "main": "server.js",
   "scripts": {
