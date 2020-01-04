@@ -17,10 +17,10 @@ COPY ./app /usr/src/app
 
 # RUN npm run build
 EXPOSE 3014
-# CMD [ "node", "server.js" ]
+# CMD [ "node", "app.js" ]
 
 COPY wait-for-it.sh /
 
 # RUN npm run build
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "app.js" ]
