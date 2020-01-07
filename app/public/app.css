@@ -9,6 +9,13 @@ body {
     font-weight: 100;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
 h1 {
     margin: 0;
     font-size: 500px;
@@ -19,4 +26,33 @@ h1 {
 p {
     margin: 0;
     font-size: 50px;
+}
+
+.form {
+    line-height: 1.5;
+    border: none;
+    border-bottom: 3px solid #ebebeb;
+    width: 700px;
+    font-size: 2.9em;
+    color: white;
+    padding: 5px  10px;
+    background: transparent;
+}
+
+button {
+    line-height: 2.0;
+    border: 3px solid white;
+    font-size: 1.9em;
+    color: rgb(66,69,86);
+    padding: 5px 30px;
+    background: rgba(255,255,255,1.0);
+    opacity: 0.8;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder { /*Chrome/Opera/Safari */
+    color: rgba(255,255,255,0.8);
 }
