@@ -2,13 +2,15 @@
 
 const express = require('express');
 const mysql = require('mysql');
+const app = express();
 
 // Constants
 const PORT = 3014;
 const HOST = '0.0.0.0';
 
+app.set("view engine", "ejs");
+
 // App
-const app = express();
 const connection = mysql.createConnection({
   host     : 'db',
   user     : 'root',
@@ -21,12 +23,13 @@ app.get('/', (req, res) => {
   connection.query(q, (err, results)=>{
     if(err) throw err;
     let count = results[0].count;
-    res.send(`We have ${count} users in our db`);
+    // res.send(`We have ${count} users in our db`);
+    res.render("home");
   });
 });
 
 app.get('/joke', (req, res) => {
-  let joke = "joke test";
+  let joke = "<strong>What do you call a dog that does magic tricks?</strong> <em>A labracadabrador</em>.";
   res.send(joke);
   console.log('joke page');
 });

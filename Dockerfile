@@ -11,11 +11,11 @@ WORKDIR /usr/src/app
 
 COPY ./app/package*.json /usr/src/app/
 
-RUN npm install --production --registry=https://registry.npmjs.org
+RUN npm install
 
 COPY ./app /usr/src/app
 
-# RUN npm run build
+#RUN npm run build
 EXPOSE 3014
 # CMD [ "node", "app.js" ]
 
